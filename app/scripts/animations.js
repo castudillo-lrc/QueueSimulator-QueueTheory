@@ -1,5 +1,9 @@
 
 var arrServers = [0,0,0,0];
+var id = 1;
+var pos=0;
+var cantidad=0;
+var queue = [];
 
 var lambda = 3;
 
@@ -13,74 +17,24 @@ function setLapses (laps) {
 		}
 		
 	};
-	console.log(lapses);
+	//console.log(lapses);
 }
 
 
-/*
-for (var i = 0; i < lapses.length; i++) {
-	console.log(lapses[i]);
-	
-	(function  (index) {
-		if(index === 0){
-			setTimeout(function  () {
-				
-				//$( "#fila" ).append( '<div id="example-'+id+'" class="circle small"></div>');
-				//moveClient("#example-"+id,0, 0);
-				//moveClient("#example-"+id,350, 0);
-				//console.log("time lapse");
-				//id++;
-			},5000)
-		}else{
-			
-			
-			
-		}
-	})(lapses[i]);
-	
-};
-*/
 
-var id = 1;
-function sendClients(clients){
-	
-
-	for (var i = 0; i < clients; i++) {
-		(function  (ins) {	
-			setTimeout(function  () {
-				$( "#fila" ).append( '<div id="example-'+id+'" class="circle small"></div>');
-				moveClient("#example-"+id,0, 0);
-				moveClient("#example-"+id,350, 0);
-				console.log("time lapse");
-				id++;
-			},5000/ins)
-		})(i);
-	};
-}
-
-function init(){
-	for (var i = 0; i < lapses.length; i++) {
-		(function  (index) {
-			sendClients(lapses[index]);
-			console.log(lapses[index]);
-		})(i);
-	};
-}
-
-var pos=0;
-var cantidad=0;
-function cholo(){
+function sendClients(){
 	setInterval(function myVar(){
 
 		cantidad += lapses[pos];
-		console.log(cantidad);
+		//console.log(cantidad);
 		for (var i = 0; i < lapses[pos]; i++) {
 		(function  (ins) {	
 			setTimeout(function  () {
 				$( "#fila" ).append( '<div id="example-'+id+'" class="circle small"></div>');
-				moveClient("#example-"+id,0, 0);
-				moveClient("#example-"+id,350, 0);
-				console.log("time lapse");
+				moveClient("#example-"+id,0, 200);
+				moveClient("#example-"+id,350, 200);
+				queue.push("#example-"+id);
+				//console.log(queue.shift());
 				id++;
 			},5000/ins)
 		})(i);
@@ -89,6 +43,63 @@ function cholo(){
 	}, 5000)
 }
 
+function path1(idS){
+	cantidad -=1;
+	moveClient(idS,575, 40);
+	arrServers[0]=1;
+	ereaseClient(idS, 0);
+}
+function path2(idS){
+	cantidad -=1;
+	moveClient(idS,575, 145);
+	arrServers[1]=1;
+	ereaseClient(idS, 1);
+}
+function path3(idS){
+	cantidad -=1;
+	moveClient(idS,575, 250);
+	arrServers[2]=1;
+	ereaseClient(idS, 2);
+}
+function path4(idS){
+	cantidad -=1;
+	moveClient(idS,575, 350);
+	arrServers[3]=1;
+	ereaseClient(idS, 3);
+}
+
+function ereaseClient(ids, position){
+	setTimeout(function  () {
+				console.log("borrando "+ids);
+				$( ids ).remove();
+				arrServers[position]=0;
+				console.log(arrServers[position]);
+				;
+			},5000)
+}
+
+function printClients(){
+	setInterval(function myVar(){
+		//console.log(queue.shift());
+		var random = Math.random();
+		//console.log(arrServers);
+		if($.inArray(0,arrServers) != -1){
+			if(arrServers[0]==0 && random < 1/4){
+				path1(queue.shift());
+			}
+			else if(arrServers[1]==0 && random >= 1/4 && random < 2/4){
+				path2(queue.shift());
+			}
+			else if(arrServers[2]==0 && random >= 2/4 && random < 3/4){
+				path3(queue.shift());
+			}
+			else if(arrServers[3]==0 && random >= 3/4 && random < 4/4){
+				path4(queue.shift());	
+			}
+			//console.log("funciona");
+		}
+	}, 100)
+}
 
 //console.log(clients);
 
