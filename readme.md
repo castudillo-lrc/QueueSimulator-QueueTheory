@@ -69,3 +69,9 @@ _The following information is part of a delivery for an school project._
 ## Class Diagram
 
 ![class diagram](app/images/ClassDiagram.png)
+
+* * *
+
+##JDocs
+[animations.js](app/scripts/out/animations.js.html)
+[functions.js](app/scripts/out/functions.js.html)
