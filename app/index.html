@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>finalProject</title>
+    <title>Queue simulator</title>
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
@@ -38,17 +38,46 @@
         </ul>
         <h3 class="text-muted">Queue Simulator</h3>
       </div>
-<!--
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-      </div>
--->
+
       <div class="row marketing"style="height:500px">
         <div class="col-lg-6" id="canvas">
-         <!--<div id="example-0" class="circle small"></div>-->
-         <div id="fila"></div>-
+          <div class="row">
+            
+              <div class="form-group">
+                
+                <div class="col-xs-2" style="">  
+                  <div class="input-group">
+                    <label for="lambdaid">Lambda</label>
+                    <input type="number" class="form-control" id="lambdaid" > 
+                  </div>
+                </div>
+
+
+                <div style="margin-left:80px;"class="col-xs-3">
+                  <div class="input-group">
+                    <label for="muiid">Mui</label>
+                    <input type="number" class="form-control" id="muiid" >
+                    
+                  </div>
+                </div>
+
+                <div class="col-xs-1" style="">
+                  <button id='playButton' disabled="disabled" style="margin-top:17px;"onclick = "printClients()" class="btn btn-success">Start!</button>
+
+                </div>
+
+                 <div class="col-xs-1" style="margin-left:40px;">
+                  <button style="margin-top:17px;"onclick = "location.reload();" class="btn btn-danger">reload!</button>
+
+                </div>
+
+                
+              </div>
+              
+           
+          </div>
+
+         <div id="fila"></div>
           <div id="draw-group" class="box medium" style="transform: translate3d(600px, 0px, 0px);"></div>
           <div id="draw-group" class="box medium" style="transform: translate3d(600px, 50px, 0px);"></div>
           <div id="draw-group" class="box medium" style="transform: translate3d(600px, 100px, 0px);"></div>
@@ -56,11 +85,28 @@
           <div id="draw-group" class="entry medium" style="color:#fff;"><p id="queueSize" style="margin-left:7px;font-size:20px;"></p></div>
 
           <div id="draw-animation"></div>
-          <button class='button' id='playButton' onclick = "printClients()" >click</button>
+          
           
         </div>
       </div>
+      <div class="footer"></div>
 
+      <div class="row">
+        <div class="col-md-12"><h1>Results</h1></div> 
+      </div>
+     
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>P0:</p><p id="rP0"></p></div>
+        <div class="col-xs-6 col-md-4"><p>L:</p><p id="rl"></p></div>
+        <div class="col-xs-6 col-md-4"><p>W:</p><p id="rw"></p></div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>Lq:</p><p id="rlq"></p></div>
+        <div class="col-xs-6 col-md-4"><p>Wq:</p><p id="rwq"></p></div>
+        <div class="col-xs-6 col-md-4"><p>rate:</p><p id="rrate"></p></div>
+      </div>
+     
       <div class="footer">
         <p>♥ from the Yeoman team</p>
       </div>

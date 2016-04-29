@@ -44,3 +44,22 @@ function factorial (n) {
 //po(3,3,5);
   
   console.log(w(2,3,1));
+
+
+
+$('#playButton').click(function(){
+    $("#rP0").text(po($("#lambdaid").val(), $("#muiid").val(), 4));
+    $("#rl").text(l($("#lambdaid").val(),$("#muiid").val(), 4));
+    $("#rw").text(w($("#lambdaid").val(), $("#muiid").val(), 4));
+    $("#rlq").text(lq($("#lambdaid").val(), $("#muiid").val(), 4));
+    $("#rwq").text(wq($("#lambdaid").val(),$("#muiid").val(), 4));
+    $("#rrate").text(rate($("#lambdaid").val(), $("#muiid").val(), 4));
+});
+
+
+/*
+$("#rl").text(quantity);
+$("#rw").text(quantity);
+$("#rlq").text(quantity);
+$("#rwq").text(quantity);
+$("#rrate").text(quantity);*/

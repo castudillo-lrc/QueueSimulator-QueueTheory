@@ -4,17 +4,22 @@ var id = 1;
 var pos=0;
 var quantity=0;
 var queue = [];
-var lambda = 3;
-var miu = 2 * 500;
+var lambda = $("#lambdaid").val();
+var miu = $("#muiid").val();
 var exponential = [];
+
 
 $("#queueSize").text(quantity);
 
 var lapses = []
 function setLapses (laps) {
+	
 	var r = new Rands();
+	console.log($("#lambdaid").val() +" + " + $("#muiid").val());
+	lambda = $("#lambdaid").val() ;
+	miu = $("#muiid").val();
 	lapses = r.poisson(lambda,[laps]);
-	exponential = r.exponential(miu, [1000])
+	exponential = r.exponential(miu*500, [1000])
 	for (var i = 0; i < lapses.length; i++) {
 		if(lapses[i] ==0){
 			lapses[i] = 1;
@@ -167,3 +172,15 @@ function init() {
 	printClients();
 }
 
+
+
+
+$("#lambdaid").on("input", function() {
+    if(this.value){
+    	$("#muiid").on("input", function() {
+		    if(this.value){
+		    	$( "#playButton" ).prop( "disabled", false );
+		    }
+});
+    }
+});
