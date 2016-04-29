@@ -2,9 +2,21 @@
 var arrServers = [0,0,0,0];
 
 var lambda = 3;
-var r = new Rands();
 
-var lapses = r.poisson(lambda,[2]);
+var lapses = []
+function setLapses (laps) {
+	var r = new Rands();
+	lapses = r.poisson(lambda,[laps]);
+	for (var i = 0; i < lapses.length; i++) {
+		if(lapses[i] ==0){
+			lapses[i] = 1;
+		}
+		
+	};
+	console.log(lapses);
+}
+
+
 /*
 for (var i = 0; i < lapses.length; i++) {
 	console.log(lapses[i]);
@@ -30,22 +42,52 @@ for (var i = 0; i < lapses.length; i++) {
 */
 
 var id = 1;
-function create(){
-	for (var i = 0; i < 10; i++) {
+function sendClients(clients){
+	
+
+	for (var i = 0; i < clients; i++) {
 		(function  (ins) {	
-		setTimeout(function  () {
-			
-			$( "#fila" ).append( '<div id="example-'+id+'" class="circle small"></div>');
-			moveClient("#example-"+id,0, 0);
-			moveClient("#example-"+id,350, 0);
-			console.log("time lapse");
-			id++;
+			setTimeout(function  () {
+				$( "#fila" ).append( '<div id="example-'+id+'" class="circle small"></div>');
+				moveClient("#example-"+id,0, 0);
+				moveClient("#example-"+id,350, 0);
+				console.log("time lapse");
+				id++;
 			},5000/ins)
 		})(i);
 	};
-	
 }
 
+function init(){
+	for (var i = 0; i < lapses.length; i++) {
+		(function  (index) {
+			sendClients(lapses[index]);
+			console.log(lapses[index]);
+		})(i);
+	};
+}
+
+var pos=0;
+var cantidad=0;
+function cholo(){
+	setInterval(function myVar(){
+
+		cantidad += lapses[pos];
+		console.log(cantidad);
+		for (var i = 0; i < lapses[pos]; i++) {
+		(function  (ins) {	
+			setTimeout(function  () {
+				$( "#fila" ).append( '<div id="example-'+id+'" class="circle small"></div>');
+				moveClient("#example-"+id,0, 0);
+				moveClient("#example-"+id,350, 0);
+				console.log("time lapse");
+				id++;
+			},5000/ins)
+		})(i);
+		};
+		pos += 1;
+	}, 5000)
+}
 
 
 //console.log(clients);
