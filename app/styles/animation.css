@@ -1,0 +1,40 @@
+.circle {
+  margin: 5px;
+  border: 1px solid #FF771C;
+  font-size: 11px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  background-color: #FF771C;
+  transform: translate3d(0px, 200px, 0px);
+}
+
+.box {
+  margin: 5px;
+  border: 1px solid #000;
+  font-size: 11px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #337ab7;
+  
+}
+
+.medium{
+	width: 50px;
+  	height: 50px;
+  	
+}
+
+.entry{
+	width: 30px;
+  	height: 30px;
+  	background-color: #3AB5AD;
+  	border: 1px solid #000;
+  	border-radius: 5px;
+  	transform: translate3d(350px, -50px, 0px);
+}
+
+.small {
+  width: 20px;
+  height: 20px;
+}

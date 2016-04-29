@@ -36,7 +36,7 @@ function rate(lambda, miu, m){
 
 function factorial (n) {
 	var total = 1; 
-	for (i=1; i<=n; i++) {
+	for (var i=1; i<=n; i++) {
 		total = total * i; 
 	}
 	return total; 
