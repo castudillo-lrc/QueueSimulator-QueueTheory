@@ -23,6 +23,8 @@ _The following information is part of a delivery for an school project._
 ![User stories](app/images/UserCases.png)  
 
 ### **Set variables Lambda and Mui**
+| name 	| description|
+|-------|----------|
 | Goal in context  | Prepare the system for the calculation and simulation  |
 | Preconditions  |  The variables must have the value of zero |
 | Successful end condition  | Variables correctly setted|
@@ -30,6 +32,8 @@ _The following information is part of a delivery for an school project._
 | Primary Actors User | he or she has to know about queue theory |
 
 ### **Calculate and Simulate**
+| name 	| description|
+|-------|----------|
 | Goal in context  | Execute the simulation and calculation of the queue  |
 | Preconditions  |  At least one queue simulator has already ran |
 | Successful end condition  | Variables correctly setted|
@@ -37,6 +41,8 @@ _The following information is part of a delivery for an school project._
 | Primary Actors User | he or she has to know about queue theory |
 
 ### **Reset simulation**
+| name 	| description|
+|-------|----------|
 | Goal in context  | Reset all variables to create a new simulation  |
 | Preconditions  |  The variables must have to be setted correctly |
 | Successful end condition  | Variables correctly setted|
@@ -44,6 +50,8 @@ _The following information is part of a delivery for an school project._
 | Primary Actors User | he or she has to know about queue theory |
 
 ### **Check documentation**
+| name 	| description|
+|-------|----------|
 | Goal in context  | Check all info related to the project  |
 | Preconditions  |  none |
 | Successful end condition  | Information displayed|
