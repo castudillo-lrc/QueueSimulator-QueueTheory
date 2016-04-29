@@ -7,6 +7,7 @@
   border-radius: 50%;
   background-color: #FF771C;
   transform: translate3d(0px, 200px, 0px);
+  position: absolute;
 }
 
 .box {

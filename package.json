@@ -41,6 +41,7 @@
     }
   },
   "dependencies": {
+    "rands": "^1.0.0",
     "two.js": "^0.5.0"
   }
 }

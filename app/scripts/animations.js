@@ -1,3 +1,55 @@
+
+var arrServers = [0,0,0,0];
+
+var lambda = 3;
+var r = new Rands();
+
+var lapses = r.poisson(lambda,[2]);
+/*
+for (var i = 0; i < lapses.length; i++) {
+	console.log(lapses[i]);
+	
+	(function  (index) {
+		if(index === 0){
+			setTimeout(function  () {
+				
+				//$( "#fila" ).append( '<div id="example-'+id+'" class="circle small"></div>');
+				//moveClient("#example-"+id,0, 0);
+				//moveClient("#example-"+id,350, 0);
+				//console.log("time lapse");
+				//id++;
+			},5000)
+		}else{
+			
+			
+			
+		}
+	})(lapses[i]);
+	
+};
+*/
+
+var id = 1;
+function create(){
+	for (var i = 0; i < 10; i++) {
+		(function  (ins) {	
+		setTimeout(function  () {
+			
+			$( "#fila" ).append( '<div id="example-'+id+'" class="circle small"></div>');
+			moveClient("#example-"+id,0, 0);
+			moveClient("#example-"+id,350, 0);
+			console.log("time lapse");
+			id++;
+			},5000/ins)
+		})(i);
+	};
+	
+}
+
+
+
+//console.log(clients);
+
 document.getElementById('playButton').onclick = function(e) {
   /*move('#example-1')
     .to(500, 200)
@@ -9,16 +61,7 @@ document.getElementById('playButton').onclick = function(e) {
 
 };
 
-var id = 1;
 
-setInterval(function  () {
-	
-	$( "#canvas" ).append( '<div id="example-'+id+'" class="circle small"></div>');
-	moveClient("#example-"+id,0, 0);
-	moveClient("#example-"+id,350, 0);
-	console.log("time lapse");
-	id++;
-},3000)
 
 function moveClient(id, x, y){
 	move(id)
