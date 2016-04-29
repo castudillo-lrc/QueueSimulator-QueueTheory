@@ -41,7 +41,7 @@ function factorial (n) {
 	}
 	return total; 
 }
-//po(3,3,5);
+
   
   console.log(w(2,3,1));
 
@@ -57,9 +57,3 @@ $('#playButton').click(function(){
 });
 
 
-/*
-$("#rl").text(quantity);
-$("#rw").text(quantity);
-$("#rlq").text(quantity);
-$("#rwq").text(quantity);
-$("#rrate").text(quantity);*/

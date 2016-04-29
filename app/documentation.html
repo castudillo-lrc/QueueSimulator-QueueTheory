@@ -1,0 +1,245 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Queue simulator</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/two.js/build/two.min.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li ><a href="index.html">Home</a></li>
+          <li class="active"><a href="documentation.html">Documentation</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">Queue Simulator</h3>
+      </div>
+
+      <div class="row marketing"style="height:500px">
+           <h1>About</h1>
+           <p>This is a simulator of a queue <strong>M/M/D</strong> where the first M represent the clients (orange circles) that are arriving to the system in a poison distribution, the second M represent the times of waiting of the servers (blue squares). The time of waiting has an exponential distribution. D represents that the system has more than one server.</p>
+
+           <p>You can set the <strong>Lambda</strong> and the <strong>Miu</strong> variables to the simulator, these variables are calculated over a period of one hour. For example if you set <strong>Lambda</strong>=3, that means that in your system there is an average of 3 clients over an hour arriving to it with a poison distribution. If you set <strong>Miu</strong>=4 that means that your servers can attend a client in an average of 4 over an hour with an exponential distribution. <strong>The probability of a client to choose a server is the same.</strong> For more information in queue theory please check <a href="https://en.wikipedia.org/wiki/Queueing_theory" target="_blank">this page</a> </p>
+
+           <p>At the bottom of the simulator you can check the results of the simulator. The variables calculated are:</p>
+           <ul>
+             <li>P0, the probability that the system contains zero clients</li>
+             <li>L, the average quantity of clients in the system</li>
+             <li>W, the average time of waiting of the system</li>
+             <li>Lq, the average of a client that are actualy in the line waiting for a server</li>
+             <li>Wq, the average of time that a client stays in the queue of a server</li>
+             <li>rate , the rate of utilization of the system</li>
+           </ul>
+
+           <p> <i>The following information is part of a delivery for an school project.</i></p>
+
+
+          <hr>
+          <h2>User Stories</h2>
+          </br>
+            <img src="images/UserCases.png" />
+          </br>
+          </br>
+
+          <h3 style="margin-top:30px;"><strong>Set variables Lambda and Mui</strong></h3>
+          <table class="table table-bordered">
+            
+            <tbody>
+              <tr>
+                <th>Goal in context</th>
+                <td>Prepare the system for the calculation and simulation</td>
+              </tr>
+               <tr>
+                <th>Preconditions</th>
+                <td>The variables must have the value of zero</td>
+              </tr>
+              <tr>
+                <th>Successful end condition</th>
+                <td>Variables correctly setted</td>
+              </tr>
+               <tr>
+                <th>Failed end condition</th>
+                <td>Variables with invalid values</td>
+              </tr>
+              <tr>
+                <th>Primary Actors</th>
+                <td>User, she or he has to know about queue theory</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="margin-top:40px;"><strong>Calculate and Simulate</strong></h3>
+          <table class="table table-bordered">
+            
+            <tbody>
+              <tr>
+                <th>Goal in context</th>
+                <td>Execute the simulation and calculation of the queue</td>
+              </tr>
+               <tr>
+                <th>Preconditions</th>
+                <td>The variables must have to be setted correctly</td>
+              </tr>
+              <tr>
+                <th>Successful end condition</th>
+                <td>Variables correctly setted</td>
+              </tr>
+               <tr>
+                <th>Failed end condition</th>
+                <td>Simulation and calculations were not executed</td>
+              </tr>
+              <tr>
+                <th>Primary Actors</th>
+                <td>User, she or he has to know about queue theory</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="margin-top:40px;"><strong>Reset simulation</strong></h3>
+          <table class="table table-bordered">
+            
+            <tbody>
+              <tr>
+                <th>Goal in context</th>
+                <td>Reset all variables to create a new simulation</td>
+              </tr>
+               <tr>
+                <th>Preconditions</th>
+                <td>At least one queue simulator has already ran</td>
+              </tr>
+              <tr>
+                <th>Successful end condition</th>
+                <td>Variables correctly setted</td>
+              </tr>
+               <tr>
+                <th>Failed end condition</th>
+                <td>Variables not setted correctly</td>
+              </tr>
+              <tr>
+                <th>Primary Actors</th>
+                <td>User, she or he has to know about queue theory</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="margin-top:40px;"><strong>Check documentation</strong></h3>
+          <table class="table table-bordered">
+            
+            <tbody>
+              <tr>
+                <th>Goal in context</th>
+                <td>Check all info related to the project</td>
+              </tr>
+               <tr>
+                <th>Preconditions</th>
+                <td>None</td>
+              </tr>
+              <tr>
+                <th>Successful end condition</th>
+                <td>Information displayed</td>
+              </tr>
+               <tr>
+                <th>Failed end condition</th>
+                <td>Information was not displayed</td>
+              </tr>
+              <tr>
+                <th>Primary Actors</th>
+                <td>User, she or he has to know about queue theory</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        <hr>
+        <h2>State Diagram</h2>
+        </br>
+              <img src="images/StateDiagram.png" />
+            </br>
+
+        
+
+        <hr>
+        <h2>Class Diagram</h2>
+        </br>
+          <img src="images/ClassDiagram.png" />
+        </br>
+
+
+
+          <div class="row">
+            <div class="footer">
+              <p>Check the project hosted in <a href="https://github.com/Eencsio/QueueSimulator-QueueTheory">Github</a> </p>
+            </div>
+          </div>
+      </div>
+   
+     
+     
+     
+     
+      
+   
+    
+
+   
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <script src="scripts/move.min.js"></script>
+
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+     <script src="/bower_components/rands/rands.min.js"></script>
+
+    <!-- endbuild -->
+    
+
+
+    <!-- build:js scripts/main.js -->
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/animations.js"></script>
+    
+    <!-- endbuild -->
+  </body>
+</html>
