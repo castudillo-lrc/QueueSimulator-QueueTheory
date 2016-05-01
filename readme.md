@@ -1,7 +1,7 @@
 #Queue simulator in javascript
 ## About
 
-This is a simulator of a queue **M/M/D** where the first M represent the clients (orange circles) that are arriving to the system in a poison distribution, the second M represent the times of waiting of the servers (blue squares). The time of waiting has an exponential distribution. D represents that the system has more than one server.
+This is a simulator of a queue **M/M/D** where the first M represent the clients (orange circles) that are arriving to the system in a poisson distribution, the second M represent the times of waiting of the servers (blue squares). The time of waiting has an exponential distribution. D represents that the system has more than one server.
 
 You can set the **Lambda** and the **Miu** variables to the simulator, these variables are calculated over a period of one hour. For example if you set **Lambda**=3, that means that in your system there is an average of 3 clients over an hour arriving to it with a poison distribution. If you set **Miu**=4 that means that your servers can attend a client in an average of 4 over an hour with an exponential distribution. **The probability of a client to choose a server is the same.** For more information in queue theory please check [this page](https://en.wikipedia.org/wiki/Queueing_theory)
 
