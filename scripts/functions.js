@@ -26,7 +26,7 @@ function po(lambda, miu, m){
 function l(lambda, miu, m){
   var total = 0;
   
-  total = (lambda*miu*Math.pow(lambda/miu, m))/(factorial(m-1)*Math.sqrt(m*miu-lambda)*po(lambda, miu, m)+(lambda/miu));
+  total = (lambda*miu*Math.pow(lambda/miu, m))/(factorial(m-1)*Math.sqrt(m*miu-lambda))*po(lambda, miu, m)+(lambda/miu);
   //console.log(total);
   return total;
 }
